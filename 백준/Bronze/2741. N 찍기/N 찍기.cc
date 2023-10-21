@@ -1,12 +1,14 @@
 #include <iostream>
+#include <string>
 using namespace std;
+int main()
+{
+	int cnt;
+	cin >> cnt;
+	string str="";
 
-int main(){
-    ios_base::sync_with_stdio(false);
-    int count;
-    cin >> count;
-    for(int i = 1; i<=count; i++)
-        cout << i << '\n';
-    
-    return 0;
+	for (int i = 0; i < cnt; i++)		
+		str += to_string(i+1)+"\n";
+
+	cout << str;
 }
