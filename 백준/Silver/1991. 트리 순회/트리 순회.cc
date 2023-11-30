@@ -2,8 +2,8 @@
 #include <map>
 using namespace std;
 
-int n;
-char leftChild, node, rightChild;
+int N;
+char node, var2, var3;
 map<char, pair<char, char>> tree;
 
 void preorder(char node) {
@@ -36,15 +36,16 @@ void postorder(char node) {
 	cout << node;
 }
 
-int main() {
-	cin >> n;
-	for (int i = 0; i < n; i++) {
-		cin >> node >> leftChild >> rightChild;
-		tree[node] = make_pair(leftChild, rightChild);
+int main() {	
+	cin >> N;
+	for (int i = 0; i < N; i++) {		
+		cin >> node >> var2 >> var3;
+		tree[node] = make_pair(var2, var3);
 	}
+
 	preorder('A');
-	cout << '\n';
+	cout << "\n";
 	inorder('A');
-	cout << '\n';
+	cout << "\n";
 	postorder('A');
 }
