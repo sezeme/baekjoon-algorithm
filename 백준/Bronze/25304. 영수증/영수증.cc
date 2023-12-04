@@ -3,21 +3,21 @@
 using namespace std;
 
 int main() {
+	int X,N;
+	cin >> X;
+	cin >> N;
 
-    int x, t, a, b;
+	int price, count;
+	for (int i = 0; i < N; i++) {
+		cin >> price >> count;
+		X -= price * count;
+	}
 
-    cin >> x;
-    cin >> t;
-
-    for (int i = 0; i < t; i++) {
-        cin >> a >> b;
-        x -= a * b;
-    }
-
-    if (x == 0) cout << "Yes";
-    else cout << "No";
-
-    
-
-    return 0;
+	if (X == 0) {
+		cout << "Yes";
+	}
+	else {
+		cout << "No";
+	}
+	return 0;
 }
