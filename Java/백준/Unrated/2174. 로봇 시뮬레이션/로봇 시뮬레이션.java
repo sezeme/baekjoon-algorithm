@@ -41,10 +41,9 @@ public class Main {
 
         @Override
         public boolean equals(Object obj) {
-            if (this == obj) return true; // 같은 객체를 참조하는 경우
-            if (obj == null || getClass() != obj.getClass()) return false; // null이거나 다른 클래스인 경우
-            Robot robot = (Robot) obj; // 타입 캐스팅
-            return x == robot.x && y == robot.y;
+            if (!(obj instanceof Robot)) return false;
+            Robot r = (Robot) obj;
+            return x == r.x && y == r.y;
         }
     }
 
@@ -57,8 +56,7 @@ public class Main {
     static void checkBumpedRobot(int idx) {
         Robot robot = robots[idx];
         for (int i = 1; i <= N; i++) {
-            if (idx == i) continue;
-            if (robot.equals(robots[i]))
+            if (i != idx && robot.equals(robots[i]))
                 throw new RuntimeException("Robot " + idx + " crashes into robot "+i);
         }
 
